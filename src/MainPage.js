@@ -36,7 +36,8 @@ class MainPage extends React.Component {
     }
 
     onButtonPress = (e) => {
-        //this function will update the messageArray in state and update the time at which the message is sent
+        //this function will update the messageArray in state and update the time at which the message is sent.
+        //this function will either update the message or add a new one depending on whether a message is selected
         if(this.state.buttonMode === "send"){
             const messageData = {...this.state.messageData}
             messageData.time = new Date().toLocaleTimeString();
@@ -72,6 +73,7 @@ class MainPage extends React.Component {
         
 
     messageUpdate = (messageUpdateIndex) => {
+        //this will change the status of the input to update a message or delete it
         this.setState({buttonMode: "update", messageUpdateIndex: messageUpdateIndex}, () => {console.log(this.state.messageUpdateIndex)});
     }
 
