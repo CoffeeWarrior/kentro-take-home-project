@@ -1,5 +1,6 @@
 import React from 'react';
 import MainPage from "./MainPage.js";
+import "./App.css"
 
 /* Simple Chat Task: - The task is to build a react web application for messaging 'people'. This task involes these rules and set of features. This will also be using the event emitter class created in the exercise task.
 
@@ -41,10 +42,10 @@ class App extends React.Component {
   }
 
   LoginPage = () => {
-    //render jsx for login so its not gross in render function
+    //render jsx for login so its not gross in render function    
     return (
       <div>
-        <form>
+        <form style={this.formStyles}>
           <input type="text" name="name" placeholder="please enter your name" onChange={this.onFormInputChange}></input>
           <button type="submit" disabled={!this.state.submittable} onClick={this.accessMainPage}>submit</button>
         </form>
